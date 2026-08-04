@@ -35,9 +35,13 @@
     <true/>
     <key>NSAccessibilityUsageDescription</key>
     <string>用于定位可见窗口的标准按钮，并执行用户配置的关闭、最小化和缩放操作。</string>
+    <key>SUFeedURL</key>
+    <string>https://zhou1736948757-cpu.github.io/biglights/appcast.xml</string>
+    <key>SUPublicEDKey</key>
+    <string>V2wnJLxcq4I64iT7VbzmObmXANB63KUdYCMT/kvdg1E=</string>
     <key>SUEnableAutomaticChecks</key>
-    <false/>
+    <true/>
     <key>SUAutomaticallyUpdate</key>
-    <false/>
+    <true/>
 </dict>
 </plist>

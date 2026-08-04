@@ -2,16 +2,15 @@ import Foundation
 import Testing
 @testable import BigLights
 
-@Test func updateMetadataDisablesChecksAndDownloadsByDefault() throws {
+@Test func updateMetadataEnablesChecksAndDownloadsByDefault() throws {
     let info = try sourceInfoPlist()
     #expect(info["CFBundleShortVersionString"] as? String == "1.5.0")
     #expect(info["CFBundleVersion"] as? String == "7")
-    // BigLights is a personal build: automatic updates are disabled and
-    // there is no update feed URL, so Sparkle never checks the upstream server.
-    #expect(info["SUEnableAutomaticChecks"] as? Bool == false)
-    #expect(info["SUAutomaticallyUpdate"] as? Bool == false)
-    #expect(info["SUFeedURL"] == nil)
-    #expect(info["SUPublicEDKey"] == nil)
+    // Updates are served from the owner's GitHub Pages appcast.
+    #expect(info["SUEnableAutomaticChecks"] as? Bool == true)
+    #expect(info["SUAutomaticallyUpdate"] as? Bool == true)
+    #expect((info["SUFeedURL"] as? String)?.isEmpty == false)
+    #expect((info["SUPublicEDKey"] as? String)?.isEmpty == false)
 }
 
 @Test func softwareUpdateCopyIsLocalizedInBothLanguages() {
