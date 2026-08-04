@@ -4,8 +4,8 @@ import Testing
 
 @Test func updateMetadataEnablesChecksAndDownloadsByDefault() throws {
     let info = try sourceInfoPlist()
-    #expect(info["CFBundleShortVersionString"] as? String == "1.5.0")
-    #expect(info["CFBundleVersion"] as? String == "7")
+    #expect(info["CFBundleShortVersionString"] as? String == "1.0")
+    #expect(info["CFBundleVersion"] as? String == "1")
     // Updates are served from the owner's GitHub Pages appcast.
     #expect(info["SUEnableAutomaticChecks"] as? Bool == true)
     #expect(info["SUAutomaticallyUpdate"] as? Bool == true)
